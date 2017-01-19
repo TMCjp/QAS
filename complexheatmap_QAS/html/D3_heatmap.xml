@@ -1,0 +1,23 @@
+<tool name="D3_heatmap" id="D3_heatmap" version="1.0">
+    <description> plot heatmap by D3</description>
+
+    <command interpreter="/home/ubuntu/bin/Rscript">
+        D3_heatmap.R $input1 $input2 $cancer_type $output_html_1
+		2&gt;&amp;1
+    </command>
+
+    <inputs>
+        <param format="data" name="input1" type="data" label="selected data" />
+        <param format="data" name="input2" type="data" label="different analysis results" />
+        <param name="cancer_type" type="text" label="cancer type" />
+    </inputs>
+
+    <outputs>
+        <data format="txt" name="output_html_1" label="D3_heatmap" />
+    </outputs>
+
+    <help>
+
+    </help>
+    
+</tool>

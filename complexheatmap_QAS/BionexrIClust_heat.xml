@@ -1,0 +1,26 @@
+<tool name="BionexrIClust_heat" id="BionexrIClust_heat" version="1.0">
+    <description>plot heatmap for the results of bionexr and iCluster</description>
+
+    <command interpreter="/home/ubuntu/bin/Rscript">
+        BionexrIClust_heat.R $input1 $input2 $input3 $input4 $output_image $output_text <!--$output3-->
+		2&gt;&amp;1
+    </command>
+
+    <inputs>
+        <param format="txt" name="input1" type="data" label="mutation data" />
+        <param format="txt" name="input2" type="data" label="expression data" />
+		<param format="txt" name="input3" type="data" label="bionexr result(cancer drivers gene)" />
+		<param format="txt" name="input4" type="data" label="icluster result(Molecular classification results)" />
+    </inputs>
+
+    <outputs>
+	    <data format="png" name="output_image" label="BionexrIClust_heat" />
+        <data format="txt" name="output_text" label="mutation information" />
+		<!--<data format="txt" name="output3" label="expression information" />-->
+    </outputs>
+
+    <help>
+
+    </help>
+    
+</tool>

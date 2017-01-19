@@ -1,0 +1,23 @@
+<tool name="DC_heatmap" id="DC_heatmap" version="1.0">
+    <description> plot heatmap with the result which Drive gene analysis and Classification analysis</description>
+
+    <command interpreter="/home/ubuntu/bin/Rscript">
+        DC_heatmap.R $input1 $input2 $input3 $output_image_1
+		2&gt;&amp;1
+    </command>
+
+    <inputs>
+        <param format="data" name="input1" type="data" label="Integration of data which mutation and expression" />
+        <param format="data" name="input2" type="data" label="Drive gene analysis results" />
+        <param format="data" name="input3" type="data" label="Classification analysis results" />
+    </inputs>
+
+    <outputs>
+        <data format="png" name="output_image_1" label="DC_heatmap" />
+    </outputs>
+
+    <help>
+
+    </help>
+    
+</tool>

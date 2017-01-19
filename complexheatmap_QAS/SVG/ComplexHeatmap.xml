@@ -1,0 +1,62 @@
+<tool name="ComplexHeatmap" id="ComplexHeatmap" version="1.0">
+    <description>complexheatmap</description>
+
+    <command interpreter="/home/ubuntu/bin/Rscript">
+        ComplexHeatmap.R $input1 $input2 $cancer_type $cluster_rows $row_hclust_side $row_names_side $cluster_columns $column_names_side $column_hclust_side $km $numberRange1 $numberRange2 $numberRange3 $colorRange1 $colorRange2 $colorRange3 $ha_mix_col_his_val $ha_mix_col_den_val $ha_mix_col_vio_val $ha_mix_col_heatmap_val $ha_mix_row_his_val $ha_mix_row_den_val $ha_mix_row_vio_val $ha_mix_row_heatmap_val $output_render
+		2&gt;&amp;1
+    </command>
+
+    <inputs>
+        <param format="data" name="input1" type="data" label="selected data" />
+        <param format="data" name="input2" type="data" label="different analysis results" />
+        <param name="cancer_type" type="text" label="cancer type" />
+        <param name="cluster_rows" type="select" label="cluster rows">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </param>
+        <param name="row_hclust_side" type="select" label="row hclust side">
+            <option value="left">left</option>
+            <option value="right">right</option>
+        </param>
+        <param name="row_names_side" type="select" label="row names side">
+            <option value="left">left</option>
+            <option value="right">right</option>
+        </param>
+        <param name="cluster_columns" type="select" label="cluster columns">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </param>
+        <param name="column_names_side" type="select" label="column names side">
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+        </param>
+        <param name="column_hclust_side" type="select" label="column hclust side">
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+        </param>
+        <param name="km" type="integer" value="1" label="km" />
+        <param name="numberRange1" type="float" value="-1" label="numberRange" />
+        <param name="numberRange2" type="float" value="0" label="numberRange2" />
+        <param name="numberRange3" type="float" value="1" label="numberRange3" />
+        <param name="colorRange1" type="color" value="#ff0000" label="colorRange" />
+        <param name="colorRange2" type="color" value="#ffffff" label="colorRange2" />
+        <param name="colorRange3" type="color" value="#0000ff" label="colorRange3" />
+        <param name="ha_mix_col_his_val" type="text" value="ha_mix_col_his" label="ha_mix_col_his_val" />
+        <param name="ha_mix_col_den_val" type="text" value="ha_mix_col_den" label="ha_mix_col_den_val" />
+        <param name="ha_mix_col_vio_val" type="text" value="ha_mix_col_vio" label="ha_mix_col_vio_val" />
+        <param name="ha_mix_col_heatmap_val" type="text" value="ha_mix_col_heatmap" label="ha_mix_col_heatmap_val" />
+        <param name="ha_mix_row_his_val" type="text" value="ha_mix_row_his" label="ha_mix_row_his_val" />
+        <param name="ha_mix_row_den_val" type="text" value="ha_mix_row_den" label="ha_mix_row_den_val" />
+        <param name="ha_mix_row_vio_val" type="text" value="ha_mix_row_vio" label="ha_mix_row_vio_val" />
+        <param name="ha_mix_row_heatmap_val" type="text" value="ha_mix_row_heatmap" label="ha_mix_row_heatmap_val" />
+    </inputs>
+
+    <outputs>
+        <data format="txt" name="output_render" label="ComplexHeatmap" />
+    </outputs>
+
+    <help>
+
+    </help>
+    
+</tool>

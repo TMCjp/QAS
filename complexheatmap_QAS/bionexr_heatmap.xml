@@ -1,0 +1,25 @@
+<tool name="bionexr_heatmap" id="bionexr_heatmap" version="1.0">
+    <description>plot heatmap for bionexr result</description>
+
+    <command interpreter="/home/ubuntu/bin/Rscript">
+        bionexr_heatmap.R $input1 $input2 $input3 $output_image $output_text $output3
+		2&gt;&amp;1
+    </command>
+
+    <inputs>
+        <param format="txt" name="input1" type="data" label="mutation data" />
+        <param format="txt" name="input2" type="data" label="expression data" />
+		<param format="txt" name="input3" type="data" label="bionexr result(cancer drivers gene)" />
+    </inputs>
+
+    <outputs>
+	    <data format="png" name="output_image" label="bionexr heatmap" />
+        <data format="txt" name="output_text" label="mutation information" />
+		<data format="txt" name="output3" label="expression information" />
+    </outputs>
+
+    <help>
+
+    </help>
+    
+</tool>
