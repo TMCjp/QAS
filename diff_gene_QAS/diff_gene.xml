@@ -1,0 +1,36 @@
+<tool id="diff_gene" name="diff_gene">
+  <description>--Look for different genes </description>
+  
+  <command interpreter="/home/ubuntu/bin/Rscript">
+    diff_gene.R $input1 $sort $number $output_text_1 $output_image_1
+	2&gt;&amp;1
+  </command>
+  
+  <inputs>
+    <param format="txt" name="input1" type="data" label="Dataset" help="Dataset missing? See TIP below"/>
+	<param name="sort" type="select" label="sort by">
+            <option value="PValue">PValue</option>
+            <option value="logFC">logFC</option>
+            <option value="p.value">p.value</option>
+            <option value="none">none</option>
+	</param>
+	<param name="number" type="text" value="100" label="Select how many before" />
+  </inputs>
+
+  <outputs>
+    <data format="txt" name="output_text_1" label="different gene" />
+	<data format="png" name="output_image_1" label="log-fold change against logCPM, with DE genes highlighted" />
+  </outputs>
+
+  <requirements>
+    
+  </requirements>
+  <tests>
+     <param name="input" value="LIHC_mRNAseq.csv"/>
+  </tests>
+  <help>
+<![CDATA[
+     这个工具将会进行差异寻找
+]]>
+  </help>
+ </tool>
