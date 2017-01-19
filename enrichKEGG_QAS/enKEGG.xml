@@ -1,0 +1,41 @@
+<tool id="enKEGG" name="enrichKEGG">  <!--id unique-->
+  <description> KEGG pathway enrich</description>
+  
+  <command interpreter="/home/ubuntu/bin/Rscript">
+    enKEGG.R $input1 <!--$input2--> $organism $pvalueCutoff $pAdjustMethod $qvalueCutoff $output_text_1 $output_image_1
+	2&gt;&amp;1
+  </command>
+  
+  <inputs>
+    <param format="txt" name="input1" type="data" label="Dataset" help="Dataset missing? See TIP below"/>
+    <!--<param format="txt" name="input2" type="data" label="information" help="Dataset missing? See TIP below"/>-->
+	<param name="organism" type="text" value="human" label="organism" />
+	<param name="pvalueCutoff" type="float" value="0.05" label="p value Cutoff" />
+	<param name="pAdjustMethod" type="select" label="p Adjust Method">
+	    <option value="BH">BH</option>
+        <option value="BY">BY</option>
+		<option value="holm">holm</option>
+        <option value="hochberg">hochberg</option>
+		<option value="hommel">hommel</option>
+        <option value="bonferroni">bonferroni</option>
+		<option value="fdr">fdr</option>
+        <option value="none">none</option>
+	</param>
+	<param name="qvalueCutoff" type="float" value="0.1" label="q value Cutoff" />
+  </inputs>
+
+  <outputs>
+    <data format="txt" name="output_text_1" label="enrichKEGG_txt" />
+    <data format="png" name="output_image_1" label="enrichKEGG_png" />
+  </outputs>
+
+  <requirements>
+    
+  </requirements>
+  <!--<tests>
+     <param name="input" value="protien.csv"/>
+  </tests>-->
+  <help>
+
+  </help>
+ </tool>

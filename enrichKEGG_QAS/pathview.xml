@@ -1,0 +1,22 @@
+<tool name="pathview" id="pathview_v2" version="2.0">
+    <description> Pathway based data integration and visualization</description>
+
+    <command interpreter="python">
+        stderr_wrapper.py /home/ubuntu/bin/Rscript /home/ubuntu/galaxy/tools/prodigy_test/pathview.R $input1 $input2 $species $output_text_1
+    </command>
+
+    <inputs>
+        <param format="data" name="input1" type="data" label="different analysis results" />
+		<param format="data" name="input2" type="data" label="KEGG enrich results" />
+        <param name="species" type="text" value="hsa" label="either the kegg code, scientific name or the common name of the target species" />
+    </inputs>
+
+    <outputs>
+        <data format="txt" name="output_text_1" label="Pathway visualization directory" />
+    </outputs>
+
+    <help>
+
+    </help>
+    
+</tool>
